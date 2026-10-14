@@ -15,17 +15,17 @@
 /**
  *  show badge with red dot style and WBadgeAnimTypeNone by default.
  */
-- (void)showBadge;
+- (void)wzl_showBadge;
 
 /**
- *  showBadge
+ *  wzl_showBadge
  *
  *  @param style WBadgeStyle type
  *  @param value (if 'style' is WBadgeStyleRedDot or WBadgeStyleNew,
  this value will be ignored. In this case, any value will be ok.)
  *   @param aniType
  */
-- (void)showBadgeWithStyle:(WBadgeStyle)style
+- (void)wzl_showBadgeWithStyle:(WBadgeStyle)style
                      value:(NSInteger)value
              animationType:(WBadgeAnimType)aniType;
 
@@ -33,11 +33,11 @@
 /**
  *  clear badge(hide badge)
  */
-- (void)clearBadge;
+- (void)wzl_clearBadge;
 
 /**
  *  make bage(if existing) not hiden
  */
-- (void)resumeBadge;
+- (void)wzl_resumeBadge;
 
 @end

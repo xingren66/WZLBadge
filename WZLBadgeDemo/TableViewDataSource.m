@@ -69,7 +69,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UIView *view = (UIView *)self.dataItems[indexPath.section][indexPath.row];
-    [view clearBadge];
+    [view wzl_clearBadge];
 }
 
 @end

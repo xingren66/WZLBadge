@@ -23,6 +23,7 @@
 
 //key for associative methods during runtime
 static char badgeLabelKey;
+static char badgeContainerKey;
 static char badgeBgColorKey;
 static char badgeFontKey;
 static char badgeTextColorKey;
@@ -55,41 +56,41 @@ typedef NS_ENUM(NSUInteger, WBadgeAnimType)
 
 @required
 
-@property (nonatomic, strong) UILabel *badge;                       /* badge entity, which is adviced not to set manually */
-@property (nonatomic, strong) UIFont *badgeFont;                    /* [UIFont boldSystemFontOfSize:9] by default if not set */
-@property (nonatomic, strong) UIColor *badgeBgColor;                /* red color by default if not set */
-@property (nonatomic, strong) UIColor *badgeTextColor;              /* white color by default if not set */
-@property (nonatomic, assign) CGRect badgeFrame;                    /* we have optimized the badge frame and center.
+@property (nonatomic, strong) UILabel *wzl_badge;                       /* badge entity, which is adviced not to set manually */
+@property (nonatomic, strong) UIFont *wzl_badgeFont;                    /* [UIFont boldSystemFontOfSize:9] by default if not set */
+@property (nonatomic, strong) UIColor *wzl_badgeBgColor;                /* red color by default if not set */
+@property (nonatomic, strong) UIColor *wzl_badgeTextColor;              /* white color by default if not set */
+@property (nonatomic, assign) CGRect wzl_badgeFrame;                    /* we have optimized the badge frame and center.
                                                                         This property is adviced not to set manually */
 
-@property (nonatomic, assign) CGPoint  badgeCenterOffset;           /* offset from right-top corner. {0,0} by default */
+@property (nonatomic, assign) CGPoint  wzl_badgeCenterOffset;           /* offset from right-top corner. {0,0} by default */
                                                                     /* For x, negative number means left offset
                                                                         For y, negative number means bottom offset */
 
 @property (nonatomic, assign) WBadgeAnimType aniType;               /* NOTE that this is not animation type of badge's
                                                                         appearing, nor  hidding*/
 
-@property (nonatomic, assign) NSInteger badgeMaximumBadgeNumber;    /*for WBadgeStyleNumber style badge,
+@property (nonatomic, assign) NSInteger wzl_badgeMaximumBadgeNumber;    /*for WBadgeStyleNumber style badge,
                                                                      if badge value is above badgeMaximumBadgeNumber,
                                                                      "badgeMaximumBadgeNumber+" will be printed. */
 
-@property (nonatomic, assign) CGFloat badgeRadius;
+@property (nonatomic, assign) CGFloat wzl_badgeRadius;
 // nomal use for red dot style of badge
 
 /**
  *  show badge with red dot style and WBadgeAnimTypeNone by default.
  */
-- (void)showBadge;
+- (void)wzl_showBadge;
 
 /**
- *  showBadge
+ *  wzl_showBadge
  *
  *  @param style WBadgeStyle type
  *  @param value (if 'style' is WBadgeStyleRedDot or WBadgeStyleNew,
             this value will be ignored. In this case, any value will be ok.)
  *   @param aniType
  */
-- (void)showBadgeWithStyle:(WBadgeStyle)style
+- (void)wzl_showBadgeWithStyle:(WBadgeStyle)style
                      value:(NSInteger)value
              animationType:(WBadgeAnimType)aniType;
 
@@ -97,7 +98,7 @@ typedef NS_ENUM(NSUInteger, WBadgeAnimType)
 /**
  *  clear badge
  */
-- (void)clearBadge;
+- (void)wzl_clearBadge;
 
 
 @end

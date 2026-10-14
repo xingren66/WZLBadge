@@ -47,8 +47,8 @@
 {
     UITabBarItem *firstItem = self.tabBar.items.firstObject;
     //it is necessary to adjust badge position
-    firstItem.badgeCenterOffset = CGPointMake(0, 0);
-    [firstItem showBadgeWithStyle:WBadgeStyleNew value:0 animationType:WBadgeAnimTypeShake];
+    firstItem.wzl_badgeCenterOffset = CGPointMake(0, 0);
+    [firstItem wzl_showBadgeWithStyle:WBadgeStyleNew value:0 animationType:WBadgeAnimTypeShake];
 }
 
 - (void)setupNaviBarItems
@@ -61,8 +61,8 @@
     self.navigationItem.leftBarButtonItem = leftItem;
     
     //show example of customize badge`s centerOffset property
-    leftItem.badgeCenterOffset = CGPointMake(-8, 0);
-    [leftItem showBadge];
+    leftItem.wzl_badgeCenterOffset = CGPointMake(-8, 0);
+    [leftItem wzl_showBadge];
 }
 
 
@@ -82,7 +82,7 @@
 
 - (void)onBarItemClicked:(UIBarButtonItem *)sender
 {
-    [sender clearBadge];
+    [sender wzl_clearBadge];
 }
 
 

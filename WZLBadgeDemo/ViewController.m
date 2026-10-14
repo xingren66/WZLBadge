@@ -64,13 +64,13 @@
         [btn setImage:[UIImage imageNamed:@"logo.jpg"] forState:UIControlStateNormal];
         btn.layer.cornerRadius = btn.width / 2;
         if (i == 1) {
-            btn.badgeBgColor = [UIColor purpleColor];
-            btn.badgeCenterOffset = CGPointMake(-btn.width, 0);
+            btn.wzl_badgeBgColor = [UIColor purpleColor];
+            btn.wzl_badgeCenterOffset = CGPointMake(-btn.width, 0);
         } else
             if (i == 2) {
-                btn.badgeBgColor = [UIColor blueColor];
+                btn.wzl_badgeBgColor = [UIColor blueColor];
             }
-        [btn showBadgeWithStyle:styles[i] value:100 animationType:WBadgeAnimTypeNone];//actual badge call comes here.
+        [btn wzl_showBadgeWithStyle:styles[i] value:100 animationType:WBadgeAnimTypeNone];//actual badge call comes here.
         [staticBadges addObject:btn];
     }
     
@@ -82,7 +82,7 @@
         btn.tag = 1000;
         [btn setImage:[UIImage imageNamed:@"logo.jpg"] forState:UIControlStateNormal];
         btn.layer.cornerRadius= btn.width / 2;
-        [btn showBadgeWithStyle:styles[i] value:100 animationType:animations[i]];
+        [btn wzl_showBadgeWithStyle:styles[i] value:100 animationType:animations[i]];
         [dynamicBadges addObject:btn];
     }
     
@@ -93,7 +93,7 @@
     btn.tag = 1000;
     [btn setImage:[UIImage imageNamed:@"logo.jpg"] forState:UIControlStateNormal];
     btn.layer.cornerRadius = btn.width / 2;
-    [btn showBadgeWithStyle:WBadgeStyleRedDot value:100 animationType:WBadgeAnimTypeShake];
+    [btn wzl_showBadgeWithStyle:WBadgeStyleRedDot value:100 animationType:WBadgeAnimTypeShake];
     [extensions addObject:btn];
     
     [dataItems addObject:staticBadges];

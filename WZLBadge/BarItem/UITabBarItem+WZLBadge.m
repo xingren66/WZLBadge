@@ -15,45 +15,45 @@
 #pragma mark -- public methods
 
 /**
- *  show badge with red dot style and WBadgeAnimTypeNone by default.
+ *  show wzl_badge with red dot style and WBadgeAnimTypeNone by default.
  */
-- (void)showBadge
+- (void)wzl_showBadge
 {
-    [kActualView showBadge];
+    [kActualView wzl_showBadge];
 }
 
 /**
- *  showBadge
+ *  wzl_showBadge
  *
  *  @param style WBadgeStyle type
  *  @param value (if 'style' is WBadgeStyleRedDot or WBadgeStyleNew,
  this value will be ignored. In this case, any value will be ok.)
  *   @param aniType
  */
-- (void)showBadgeWithStyle:(WBadgeStyle)style
+- (void)wzl_showBadgeWithStyle:(WBadgeStyle)style
                      value:(NSInteger)value
              animationType:(WBadgeAnimType)aniType
 {
-    [kActualView showBadgeWithStyle:style value:value animationType:aniType];
+    [kActualView wzl_showBadgeWithStyle:style value:value animationType:aniType];
 }
 
 /**
- *  clear badge
+ *  clear wzl_badge
  */
-- (void)clearBadge
+- (void)wzl_clearBadge
 {
-    [kActualView clearBadge];
+    [kActualView wzl_clearBadge];
 }
 
-- (void)resumeBadge
+- (void)wzl_resumeBadge
 {
-    [kActualView resumeBadge];
+    [kActualView wzl_resumeBadge];
 }
 
 #pragma mark -- private method
 
 /**
- *  Because UIBarButtonItem is kind of NSObject, it is not able to directly attach badge.
+ *  Because UIBarButtonItem is kind of NSObject, it is not able to directly attach wzl_badge.
  This method is used to find actual view (non-nil) inside UIBarButtonItem instance.
  *
  *  @return view
@@ -63,13 +63,13 @@
     // 1.get UITabbarButtion
     UIView *bottomView = [self valueForKeyPath:@"_view"];
     
-    // 2.get imageView, to make sure badge front at anytime.
+    // 2.get imageView, to make sure wzl_badge front at anytime.
     UIView *actualSuperView = nil;
     if (bottomView) {
         actualSuperView = [self find:bottomView firstSubviewWithClass:NSClassFromString(@"UITabBarSwappableImageView")];
     }
     
-    // badge label will be added onto imageView
+    // wzl_badge label will be added onto imageView
     return actualSuperView;
 }
 
@@ -86,44 +86,44 @@
 }
 
 #pragma mark -- setter/getter
-- (UILabel *)badge
+- (UILabel *)wzl_badge
 {
-    return kActualView.badge;
+    return kActualView.wzl_badge;
 }
 
-- (void)setBadge:(UILabel *)label
+- (void)setWzl_badge:(UILabel *)label
 {
-    [kActualView setBadge:label];
+    [kActualView setWzl_badge:label];
 }
 
-- (UIFont *)badgeFont
+- (UIFont *)wzl_badgeFont
 {
-	return kActualView.badgeFont;
+	return kActualView.wzl_badgeFont;
 }
 
-- (void)setBadgeFont:(UIFont *)badgeFont
+- (void)setWzl_badgeFont:(UIFont *)wzl_badgeFont
 {
-	[kActualView setBadgeFont:badgeFont];
+	[kActualView setWzl_badgeFont:wzl_badgeFont];
 }
 
-- (UIColor *)badgeBgColor
+- (UIColor *)wzl_badgeBgColor
 {
-    return [kActualView badgeBgColor];
+    return [kActualView wzl_badgeBgColor];
 }
 
-- (void)setBadgeBgColor:(UIColor *)badgeBgColor
+- (void)setWzl_badgeBgColor:(UIColor *)wzl_badgeBgColor
 {
-    [kActualView setBadgeBgColor:badgeBgColor];
+    [kActualView setWzl_badgeBgColor:wzl_badgeBgColor];
 }
 
-- (UIColor *)badgeTextColor
+- (UIColor *)wzl_badgeTextColor
 {
-    return [kActualView badgeTextColor];
+    return [kActualView wzl_badgeTextColor];
 }
 
-- (void)setBadgeTextColor:(UIColor *)badgeTextColor
+- (void)setWzl_badgeTextColor:(UIColor *)wzl_badgeTextColor
 {
-    [kActualView setBadgeTextColor:badgeTextColor];
+    [kActualView setWzl_badgeTextColor:wzl_badgeTextColor];
 }
 
 - (WBadgeAnimType)aniType
@@ -136,34 +136,44 @@
     [kActualView setAniType:aniType];
 }
 
-- (CGRect)badgeFrame
+- (CGRect)wzl_badgeFrame
 {
-    return [kActualView badgeFrame];
+    return [kActualView wzl_badgeFrame];
 }
 
-- (void)setBadgeFrame:(CGRect)badgeFrame
+- (void)setWzl_badgeFrame:(CGRect)wzl_badgeFrame
 {
-    [kActualView setBadgeFrame:badgeFrame];
+    [kActualView setWzl_badgeFrame:wzl_badgeFrame];
 }
 
-- (CGPoint)badgeCenterOffset
+- (CGPoint)wzl_badgeCenterOffset
 {
-    return [kActualView badgeCenterOffset];
+    return [kActualView wzl_badgeCenterOffset];
 }
 
-- (void)setBadgeCenterOffset:(CGPoint)badgeCenterOffset
+- (void)setWzl_badgeCenterOffset:(CGPoint)wzl_badgeCenterOffset
 {
-    [kActualView setBadgeCenterOffset:badgeCenterOffset];
+    [kActualView setWzl_badgeCenterOffset:wzl_badgeCenterOffset];
 }
 
-- (NSInteger)badgeMaximumBadgeNumber
+- (CGFloat)wzl_badgeRadius
 {
-    return [kActualView badgeMaximumBadgeNumber];
+    return [kActualView wzl_badgeRadius];
 }
 
-- (void)setBadgeMaximumBadgeNumber:(NSInteger)badgeMaximumBadgeNumber
+- (void)setWzl_badgeRadius:(CGFloat)wzl_badgeRadius
 {
-    [kActualView setBadgeMaximumBadgeNumber:badgeMaximumBadgeNumber];
+    [kActualView setWzl_badgeRadius:wzl_badgeRadius];
+}
+
+- (NSInteger)wzl_badgeMaximumBadgeNumber
+{
+    return [kActualView wzl_badgeMaximumBadgeNumber];
+}
+
+- (void)setWzl_badgeMaximumBadgeNumber:(NSInteger)wzl_badgeMaximumBadgeNumber
+{
+    [kActualView setWzl_badgeMaximumBadgeNumber:wzl_badgeMaximumBadgeNumber];
 }
 
 @end
